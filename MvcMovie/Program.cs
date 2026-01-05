@@ -22,6 +22,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"); // 기본 URL 라우팅 설정 : 컨트롤러 기본값은 Home, 액션 기본값은 Index, id는 선택적 매개변수
 
 app.Run();
