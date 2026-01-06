@@ -4,7 +4,8 @@ using DapperMvcDemo.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<DapperDbContext>(); // DapperDbContext를 싱글톤으로 등록
+// DI 등록하기
+builder.Services.AddSingleton<DapperDbContext>();                    // DapperDbContext를 싱글톤으로 등록
 builder.Services.AddScoped<IProductRepository, ProductRepository>(); // IProductRepository 구현체 등록
 
 builder.Services.AddControllersWithViews();
