@@ -69,7 +69,7 @@ namespace DapperMvcDemo.Repositories
                         ProductName = @ProductName,
                         Price = @Price,
                         ProductDescription = @ProductDescription,
-                        UpdateOn = @UpdateOn
+                        UpdatedOn = @UpdatedOn
                         WHERE ProductId = @ProductId";
 
             using var connection = _context.CreateConnection();
