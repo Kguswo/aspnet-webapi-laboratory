@@ -1,0 +1,24 @@
+﻿@model DapperMvcDemo.Models.ProductModel
+
+@{
+    ViewData["Title"] = "상품 등록";
+}
+
+<h2>상품 등록</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="ProductName" class="form-label"></label>
+        <input asp-for="ProductName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="ProductDescription" class="form-label"></label>
+        <textarea asp-for="ProductDescription" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">저장</button>
+    <a asp-action="Index" class="btn btn-secondary">취소</a>
+</form>
