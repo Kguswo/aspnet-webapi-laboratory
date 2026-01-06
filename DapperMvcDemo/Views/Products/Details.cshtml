@@ -1,0 +1,24 @@
+﻿@model DapperMvcDemo.Models.ProductModel
+
+@{
+    ViewData["Title"] = "상품 상세";
+}
+
+<h2>상품 상세</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">상품명</dt>
+    <dd class="col-sm-9">@Model.ProductName</dd>
+
+    <dt class="col-sm-3">가격</dt>
+    <dd class="col-sm-9">@Model.Price</dd>
+
+    <dt class="col-sm-3">설명</dt>
+    <dd class="col-sm-9">@Model.ProductDescription</dd>
+
+    <dt class="col-sm-3">등록일</dt>
+    <dd class="col-sm-9">@Model.CreatedOn?.ToString("yyyy-MM-dd HH:mm")</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">수정</a>
+<a asp-action="Index" class="btn btn-secondary">목록</a>
