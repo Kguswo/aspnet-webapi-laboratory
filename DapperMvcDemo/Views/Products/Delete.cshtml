@@ -1,0 +1,21 @@
+﻿@model DapperMvcDemo.Models.ProductModel
+
+@{
+    ViewData["Title"] = "상품 삭제";
+}
+
+<h2>정말 삭제하시겠습니까?</h2>
+
+<div class="card" style="width: 400px;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.ProductName</h5>
+        <p>가격: @Model.Price</p>
+        <p>설명: @Model.ProductDescription</p>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="ProductId" />
+            <button type="submit" class="btn btn-danger">삭제</button>
+            <a asp-action="Index" class="btn btn-secondary">취소</a>
+        </form>
+    </div>
+</div>
