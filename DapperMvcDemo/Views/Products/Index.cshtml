@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DapperMvcDemo.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "상품 목록";
+}
+
+<h2>상품 목록</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">새 상품 등록</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+            <th>@Html.DisplayNameFor(model => model.Price)</th>
+            <th>@Html.DisplayNameFor(model => model.ProductDescription)</th>
+            <th>@Html.DisplayNameFor(model => model.CreatedOn)</th>
+            <th>관리</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>@item.ProductDescription</td>
+                <td>@item.CreatedOn?.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-sm btn-info">상세</a>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-sm btn-warning">수정</a>
+                    <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-sm btn-danger">삭제</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
